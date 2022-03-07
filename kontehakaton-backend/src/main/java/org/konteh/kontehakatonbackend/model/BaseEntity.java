@@ -3,9 +3,7 @@ package org.konteh.kontehakatonbackend.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
-import java.util.UUID;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -13,5 +11,5 @@ import java.util.UUID;
 public class BaseEntity {
 
     @Id
-    private UUID id;
+    private String id;
 }
