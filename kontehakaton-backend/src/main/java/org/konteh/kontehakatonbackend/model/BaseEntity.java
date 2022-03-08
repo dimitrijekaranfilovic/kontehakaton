@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @MappedSuperclass
-public class BaseEntity {
+public abstract class BaseEntity {
 
     @Id
     @GenericGenerator(name = "id_generator", strategy = "org.konteh.kontehakatonbackend.util.IdGenerator")

@@ -7,7 +7,6 @@ import org.konteh.kontehakatonbackend.model.Room;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//TODO: napravi genericki konverter
 public class RoomConverter {
 
     private RoomConverter() {
