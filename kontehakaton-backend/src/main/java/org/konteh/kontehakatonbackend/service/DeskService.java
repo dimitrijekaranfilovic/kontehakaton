@@ -35,9 +35,11 @@ public class DeskService {
     }
 
     public void deleteDeskById(String id) {
-        var desk = this.deskRepository.findById(id)
-                .orElseThrow(()-> new NotFoundException(String.format("Desk with id: %s does not exist.", id)));
-        this.deskRepository.deleteById(desk.getId());
+        if (this.deskRepository.existsById(id))
+            this.deskRepository.deleteById(id);
+        else
+            throw new NotFoundException(String.format("Desk with id: %s does not exist.", id));
+
     }
 
     private int getNextDeskOrder(String roomId) {
