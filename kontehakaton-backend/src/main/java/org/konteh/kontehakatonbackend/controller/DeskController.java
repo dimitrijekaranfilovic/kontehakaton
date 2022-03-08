@@ -25,11 +25,13 @@ public class DeskController {
 
     //room je naziv citaonice
     @GetMapping
+    @ResponseStatus(HttpStatus.OK)
     public List<GetDeskDTO> getDesks(@RequestParam(name = "room") @Nullable String room) {
         return DeskConverter.toGetDeskDTOList(this.deskService.getDesksByRoomName(room));
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public GetDeskDTO createDesk(@RequestBody CreateDeskDTO dto) {
         return DeskConverter.toGetDeskDTO(this.deskService.createDesk(dto.getRoomId()));
     }
