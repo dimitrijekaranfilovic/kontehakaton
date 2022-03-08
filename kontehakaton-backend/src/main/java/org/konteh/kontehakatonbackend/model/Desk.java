@@ -4,6 +4,7 @@ package org.konteh.kontehakatonbackend.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
@@ -24,6 +25,12 @@ public class Desk extends BaseEntity {
     private Integer order;
 
     public Desk(Integer order) {
+        this.order = order;
+        this.isOccupied = false;
+    }
+
+    public Desk(Room room, Integer order) {
+        this.room = room;
         this.order = order;
         this.isOccupied = false;
     }

@@ -21,4 +21,9 @@ public class RoomService {
     public List<Room> getAllRooms() {
         return this.roomRepository.findAll();
     }
+
+    public List<Room> getRoomsByFacultyName(String faculty) {
+        String name = faculty == null ? "" : faculty;
+        return this.roomRepository.findByFacultyName(name);
+    }
 }
